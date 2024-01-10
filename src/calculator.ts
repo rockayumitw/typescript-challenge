@@ -3,8 +3,13 @@
  * @param a - 第一個數字
  * @param b - 第二個數字
  */
-export function add(a: number, b: number): number {
+export function add(a: number, b: number): number | string {
     // 在此實現函式
+    if (typeof(a) != 'number' || typeof(b) != 'number') {
+        return '應為數字'
+    } else {
+        return a + b
+    }
 }
 
 /**
@@ -12,8 +17,13 @@ export function add(a: number, b: number): number {
  * @param a - 第一個數字
  * @param b - 第二個數字
  */
-export function subtract(a: number, b: number): number {
+export function subtract(a: number, b: number): number | string {
     // 在此實現函式
+    if (typeof(a) != 'number' || typeof(b) != 'number') {
+        return '應為數字'
+    } else {
+        return a - b
+    }
 }
 
 /**
@@ -21,8 +31,13 @@ export function subtract(a: number, b: number): number {
  * @param a - 第一個數字
  * @param b - 第二個數字
  */
-export function multiply(a: number, b: number): number {
+export function multiply(a: number, b: number): number | string {
     // 在此實現函式
+    if (typeof(a) != 'number' || typeof(b) != 'number') {
+        return '應為數字'
+    } else {
+        return a * b
+    }
 }
 
 /**
@@ -30,8 +45,22 @@ export function multiply(a: number, b: number): number {
  * @param a - 第一個數字
  * @param b - 第二個數字
  */
-export function divide(a: number, b: number): number {
+export function divide(a: number, b: number): number | string {
     // 在此實現函式
+    try {
+        if (typeof(a) != 'number' || typeof(b) != 'number') {
+            return '請輸入數字'
+        } else {
+            if (b == 0) {
+                return 'Cannot divide by zero'
+            } else {
+                return a / b
+            }
+        }
+        
+    } catch (e) {
+        return 'Cannot divide by zero'
+    }
 }
 
 /**
