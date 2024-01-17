@@ -12,10 +12,5 @@
  */
 
 export function handleInput(input: string | number): string {
-    // 在此實現函式
-    let a = input
-    if (typeof(a) === 'number') {
-        a = a.toString()
-    }
-    return `Input is a string: ${a}`
+    return `Input is a ${typeof input}: ${input}`;
 }

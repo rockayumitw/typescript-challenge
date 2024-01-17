@@ -46,21 +46,15 @@ export function multiply(a: number, b: number): number | string {
  * @param b - 第二個數字
  */
 export function divide(a: number, b: number): number | string {
-    // 在此實現函式
-    try {
-        if (typeof(a) != 'number' || typeof(b) != 'number') {
-            return '請輸入數字'
-        } else {
-            if (b == 0) {
-                return 'Cannot divide by zero'
-            } else {
-                return a / b
-            }
-        }
-        
-    } catch (e) {
-        return 'Cannot divide by zero'
+    if (typeof a !== 'number' || typeof b !== 'number') {
+        return '請輸入數字';
     }
+
+    if (b === 0) {
+        throw new Error('Cannot divide by zero');
+    }
+
+    return a / b;
 }
 
 /**
